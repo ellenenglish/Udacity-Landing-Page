@@ -1,6 +1,6 @@
-/* In advance, thank you for reviewing this.
-I APPRECIATE ANY AND ALL COMMENTS!!!
-Anything you type up I will treasure and learn from.
+/* In advance, thank you for reviewing this. 
+I APPRECIATE ANY AND ALL COMMENTS!!! 
+Anything you type up I will treasure and learn from. 
 */
 
 
@@ -11,7 +11,7 @@ const sections = document.querySelectorAll('section');
 const buttonToTop = document.querySelectorAll('.button_toTop');
 
 
-// build navigation
+// build navigation 
 const navBuild = () => {
 
   // looping over all sections
@@ -24,12 +24,15 @@ const navBuild = () => {
     buttons.innerHTML = `<a class="menu__link" href="#${sectionID}">${sectionDataNav}</a>`;
     navBar.appendChild(buttons);
   });
-  navBarMenu.appendChild(navBar);
 };
 
 
 // call function to create navigation
 navBuild();
+
+
+
+
 
 
 
@@ -128,4 +131,4 @@ faders.forEach(fader => {
 });
 
 
-// THANKS AGAIN!!! /**
+// THANKS AGAIN!!! 
