@@ -110,25 +110,6 @@ main {
 }
 
 
-#navScroll {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-  }
-
-
-#navScrollr a {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 17px;
-}  
-
-
 section {
     position: relative;
     min-height: 80vh;
@@ -138,13 +119,23 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+
+.menu {
+    overflow: hidden;
+    max-height: 300px;
+  }
+
+
 .navbar__menu ul {
+    position: fixed;
     background-color: #FFFFFF;
-    padding-left: 0;
-    padding-right: 2%;
+    width: 100%;
+    padding: 0;
     margin: 0;
     text-align: right;
+    transition: 550ms;
 }
+
 
 
 .navbar__menu li {
@@ -157,23 +148,31 @@ section {
     padding: 1em;
     font-weight: bold;
     font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 32px;
     text-decoration: none;
     color: #000;
 }
 
 
 .navbar__menu .menu__link:hover {
-    background: #cccc11;
+    background: gray;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: ease 1s all;
 }
 
 
 .navbar__menu .menu__link:active {
     background: #cccc11;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: ease 1s all;
+}
+
+.active_appear{
+    display: block;
+    background: #cccc11;
+    text-decoration: none;
+    transition: ease 1s all;
+    color: #ffff;
 }
 
 
@@ -187,6 +186,17 @@ section {
   .menu {
     overflow: hidden;
     max-height: 300px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+
+  .sticky + .content {
+    padding-top: 60px;
   }
 
 
@@ -220,6 +230,14 @@ section {
   }
 
 
+  .navbar__menu .menu__link:active {
+    background: magenta;
+    color: #fff;
+    transition: ease 0.3s all;
+  }
+
+
+
 /* Header Styles */
   .page__header {
       background: #fff;
@@ -227,6 +245,13 @@ section {
       top: 0;
       width: 100%;
       z-index: 5;
+  }
+
+
+  #section2, #section3, #section4 {
+    padding-top: 130px;
+    position: relative;
+    min-height: 50vh;
   }
 }
 
