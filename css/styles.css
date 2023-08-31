@@ -16,7 +16,7 @@
 
 body {
     background: rgb(202,0,162);
-    background: linear-gradient(0deg, rgba(202,0,162,1) 0%, rgba(0,13,60,1) 100%);
+    background: linear-gradient(0deg, rgba(114,0,128,1) 0%, rgba(0,13,60,1) 100%);
     margin: 0px;
     width: 100%;
     padding: 0px;
@@ -39,6 +39,7 @@ h2 {
     font-family: 'Oxygen', Sans-Serif;
     font-size: 7em;
     color: #fff;
+    transition: ease 550ms all;
 }
 
 
@@ -46,6 +47,13 @@ p {
     line-height: 1.6em;
     font-size: .5em;
     color: #eee;
+}
+
+
+.foo {
+  color: magenta;
+  font-size: 5.5em;
+  transition: ease 850ms all;
 }
 
 
@@ -111,6 +119,7 @@ main {
 
 
 section {
+    padding-top: 60px;
     position: relative;
     min-height: 80vh;
 }
@@ -186,17 +195,6 @@ section {
   .menu {
     overflow: hidden;
     max-height: 300px;
-  }
-
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-
-  .sticky + .content {
-    padding-top: 60px;
   }
 
 
@@ -442,6 +440,7 @@ button {
   opacity: 0;
   transition: opacity 550ms ease-in;
 }
+
 
 .fade-in.appear {
   opacity: 1;
