@@ -9,6 +9,15 @@ const navBar = document.querySelector('#navbar__list');
 const navBarMenu = document.querySelector('#navbar__menu');
 const sections = document.querySelectorAll('section');
 const buttonToTop = document.querySelectorAll('.button_toTop');
+const header = document.querySelector('.page__header');
+
+
+// check the location of a section in the viewport
+const isInViewport = (section) => {
+  // destructing some properties
+  const { top, bottom } = section.getBoundingClientRect();
+  return top <= 150 && bottom >= 150;
+}
 
 
 // build navigation 
@@ -32,10 +41,6 @@ navBuild();
 
 
 
-
-
-
-
 // create function for smooth scroll effect to each section
 const smoothScroll = (evt) => {
   evt.preventDefault();
@@ -47,54 +52,11 @@ const smoothScroll = (evt) => {
   });
 };
 
+
 // Scroll to section on link click
 const buttonLinks = document.querySelectorAll('.menu__link');
 buttonLinks.forEach((button) => button.addEventListener('click', smoothScroll));
 
-
-// Use IntersectionObserver to active classes in viewport
-// Declare options
-const options = {
-  root: null,
-  threshold: 0,
-  rootMargin: "-150px 0px -150px 0px",
-};
-
-// Create function to activate classes in viewport
-let makeActive = new IntersectionObserver(function (entries, observer) {
-  entries.forEach(entry => {
-    // Create variables for both the navigation links and sections
-    const section = entry.target;
-    if (entry.isIntersecting) {
-      navBar.classList.add('active');
-      section.classList.add('your-active-class');
-    } else {
-      navBar.classList.remove('active');
-      section.classList.remove('your-active-class');
-    }
-  });
-}, options);
-
-// Call the function for each section
-sections.forEach(section => {
-  makeActive.observe(section);
-});
-
-
-// Create function to hide menu while scrolling
-var hideScroll = window.pageYOffset;
-
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-
-  if (hideScroll > window.pageYOffset) {
-    document.getElementById("navScroll").style.top = "0";
-  } else {
-    document.getElementById("navScroll").style.top = "-219px";
-  };
-
-  hideScroll = currentScrollPos;
-};
 
 
 // Create function to send user back to top of page
@@ -113,6 +75,8 @@ const appearOptions = {
   rootMargin: "0px 0px -200px 0px"
 };
 
+
+
 const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
   entries.forEach(entry => {
     if (!entry.isIntersecting) {
@@ -129,6 +93,26 @@ const appearOnScroll = new IntersectionObserver(function (entries, appearOnScrol
 faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
+
+
+
+// Create function to activate sections and header links
+function activate() {
+  let navLinks = document.querySelectorAll('.menu__link');
+  sections.forEach((section, index) => {    const sectionBond = section.getBoundingClientRect();
+    if (sectionBond.top <= 150 && sectionBond.bottom >= 150) {
+      section.classList.add("your-active-class");
+      navLinks[index].classList.add("active_appear");
+    } else {
+      section.classList.remove("your-active-class");
+      navLinks[index].classList.remove("active_appear");
+    };
+  });
+};
+
+window.addEventListener('scroll', (event) => {
+  activate();
+})
 
 
 // THANKS AGAIN!!! 
