@@ -10,19 +10,32 @@
 
 
 /* ---- Base Rules ---- */
-
-
-
-
 body {
     background: rgb(202,0,162);
     background: linear-gradient(0deg, rgba(114,0,128,1) 0%, rgba(0,13,60,1) 100%);
-    margin: 0px;
+    margin: 0;
     width: 100%;
-    padding: 0px;
     overflow-x: hidden;
     font-family: 'Merriweather', serif;
     color: #fff;
+}
+
+
+main {
+    margin: 10vh 1em 10vh;
+}
+
+
+.main-hero {
+    min-height: 40vh;
+    padding-top: 3em;
+}
+
+
+section {
+    padding-top: 60px;
+    position: relative;
+    min-height: 80vh;
 }
 
 
@@ -51,26 +64,128 @@ p {
 
 
 .foo {
-  color: magenta;
+  color: #f437ef;
   font-size: 5.5em;
   transition: ease 850ms all;
 }
 
 
-/* ---- Typography for iPad and small laptop screens ---- */
-@media only screen and (max-width: 1025px) {
+.page__footer p {
+    font-size: 1em;
+    color: #fff;
+}
+
+
+/* ---- Typography for large screens ---- */
+@media only screen and (min-width: 1921px) {
+  section {
+    padding: 5em;
+  }
+
 
   h1 {
-      font-size: 6em;
-      margin: 2em 4rem 1em;
-    }
+    padding-top: 1em;
+    font-size: 8em;
+    margin: 2%;
+    text-align: center;
+  }
 
 
   h2 {
-      border-bottom: 1.5px solid #cc1;
-      font-family: 'Oxygen', Sans-Serif;
-      color: #fff;
-    }
+    font-size: 5.1em;
+  }
+
+
+  p {
+    font-size: 2.2em;
+  }
+
+
+  .foo {
+    color: #f437ef;
+    font-size: 4.3em;
+    transition: ease 850ms all;
+  }
+
+
+  .page__footer p {
+    font-size: 1em;
+    color: #fff;
+  }
+}
+
+
+/* ---- Typography for medium screens ---- */
+@media only screen and (max-width: 1920px) {
+  .landing__container {
+    max-width: 80em;
+    padding: 4em;
+  }
+
+
+  section {
+    padding: 3em;
+  }
+
+
+  h1 {
+    padding-top: .7em;
+    font-size: 8em;
+    margin: 2%;
+    text-align: center;
+  }
+
+
+  h2 {
+    font-size: 5em;
+  }
+
+
+  p {
+    font-size: 1.9em;
+  }
+
+
+  .foo {
+    color: #f437ef;
+    font-size: 5.3em;
+    transition: ease 850ms all;
+  }
+
+
+  .page__footer p {
+    font-size: 1em;
+    color: #fff;
+  }
+}
+
+
+
+/* ---- Typography for iPad and small laptop screens ---- */
+@media only screen and (max-width: 1024px) {
+  .landing__container {
+    max-width: 80em;
+    padding: 3em;
+  }
+
+
+  section {
+    padding: 3em;
+  }
+
+
+  h1 {
+    font-size: 4em;
+    margin: 2em 4rem 1em;
+  }
+
+
+  h2 {
+    border-bottom: 1.5px solid #cc1;
+    font-size: 3em;
+    font-family: 'Oxygen', Sans-Serif;
+    color: #fff;
+  }
 
 
   p {
@@ -78,57 +193,69 @@ p {
       font-size: 1.2em;
       color: #eee;
   }
+
+
+  .foo {
+    color: #f437ef;
+    font-size: 4.3em;
+    transition: ease 850ms all;
+  }
 }
 
+
 /* ---- Typography for phones ---- */
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 414px) {
+ .landing__container {
+    max-width: 90em;
+  }
+
+
+  section {
+    padding: .2em;
+  }
+
+
+  section2, section3, section4 {
+    padding-top: 1.3em;
+  }
 
 
   h1 {
-      font-size: 4em;
-      margin: 15px;
-    }
+    font-size: 4em;
+    margin: 1em 4rem 1em;
+  }
 
 
   h2 {
-      border-bottom: 1.5px solid #cc1;
-      font-family: 'Oxygen', Sans-Serif;
-      font-size: 32px;
-      color: #fff;
-    }
+    border-bottom: 1.5px solid #cc1;
+    font-family: 'Oxygen', Sans-Serif;
+    font-size: 2.2em;
+    color: #fff;
+  }
 
 
   p {
-      line-height: 1.6em;
-      color: #eee;
+    line-height: 1.6em;
+    color: #eee;
+  }
+
+
+  .foo {
+    color: #f437ef;
+    font-size: 2.5em;
+    transition: ease 850ms all;
+  }
+
+
+  .page__footer p {
+    font-size: 1em;
+    color: #fff;
   }
 }
 
 
 
-/* ---- Layout Rules ---- */
-main {
-    margin: 10vh 1em 10vh;
-}
-
-
-.main-hero {
-    min-height: 40vh;
-    padding-top: 3em;
-}
-
-
-section {
-    padding-top: 60px;
-    position: relative;
-    min-height: 80vh;
-}
-
-
-/* ---- Module Rules ---- */
-
 /* Navigation Styles*/
-
 .menu {
     overflow: hidden;
     max-height: 300px;
@@ -146,7 +273,6 @@ section {
 }
 
 
-
 .navbar__menu li {
     display: inline-block;
 }
@@ -157,9 +283,22 @@ section {
     padding: 1em;
     font-weight: bold;
     font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
-    font-size: 32px;
+    font-size: 2.7em;
     text-decoration: none;
     color: #000;
+}
+
+/* ---- Navigation styles for iPad ---- */
+@media only screen and (max-width: 1024px) {
+  .navbar__menu .menu__link {
+    display: block;
+    padding: 1em;
+    font-weight: bold;
+    font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #000;
+  }
 }
 
 
@@ -176,6 +315,7 @@ section {
     transition: ease 1s all;
 }
 
+
 .active_appear{
     display: block;
     background: #cccc11;
@@ -185,16 +325,17 @@ section {
 }
 
 
+/* ----Navigation, header, and footer styles for phone ---- */
 @media screen and (max-width: 414px) {
   main {
-    padding-top: 90px; 
+    padding-top: 20px; 
   }
 
 
 /* Navigation Styles*/
   .menu {
     overflow: hidden;
-    max-height: 300px;
+    max-height: 200px;
   }
 
 
@@ -207,7 +348,7 @@ section {
 
 
   .navbar__menu li {
-    display: inline-block;
+    display: inline-flex;
   }
 
 
@@ -215,25 +356,25 @@ section {
     padding: 1.1em;
     font-weight: bold;
     font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
-    letter-spacing: .2em;
+    font-size: 1.1em;
+    letter-spacing: .1em;
     text-decoration: none;
     color: #000;
   }
 
 
   .navbar__menu .menu__link:hover {
-    background: #cccc11;
+    background: gray;
     color: #fff;
     transition: ease 0.3s all;
   }
 
 
   .navbar__menu .menu__link:active {
-    background: magenta;
+    background: #cccc11;
     color: #fff;
     transition: ease 0.3s all;
   }
-
 
 
 /* Header Styles */
@@ -273,6 +414,7 @@ section {
 
 
 .page__footer p {
+    font-size: 1em;
     color: #fff;
 }
 
@@ -282,24 +424,6 @@ section {
 .landing__container {
     padding: 1em;
     text-align: left;
-}
-
-
-@media only screen and (min-width: 1024px) {
-    .landing__container {
-        max-width: 80em;
-        padding: 4em;
-    }
-
-
-    h2 {
-      font-size: 4em;
-    }
-
-
-    p {
-      font-size: 2em;
-    }
 }
 
 
@@ -414,6 +538,7 @@ section.your-active-class .landing__container::after {
 button {
   margin-top: 50px;
   margin-bottom: 50px;
+  border-radius: 10px;
   padding: 15px 20px 15px 20px;
   letter-spacing: .1em;
   color: purple;
@@ -423,15 +548,30 @@ button {
 }
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 414px) {
     button {
       margin-bottom: 40px;
+      border-radius: 7px;
       padding: 10px;
       letter-spacing: .1em;
       color: purple;
       font-weight: bold;
       border: 0px;
-      font-size: 12px;
+      font-size: 1em;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    button {
+      margin-bottom: 40px;
+      border-radius: 7px;
+      padding: 10px;
+      letter-spacing: .1em;
+      color: purple;
+      font-weight: bold;
+      border: 0px;
+      font-size: 1em;
   }
 }
 
@@ -446,4 +586,12 @@ button {
   opacity: 1;
 }
 
-/* AND EVERYONE LIVED HAPPILY EVER AFTER!!!
+
+.header-gone {
+  display: none;
+  transition: ease-in 850ms all;
+  transition: ease-out 850ms all;
+}
+
+/* SECOND TIME (OR MAYBE THIRD TIME?) IS THE CHARM!
+*/
