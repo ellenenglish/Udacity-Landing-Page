@@ -1,4 +1,4 @@
-/* In advance, thank you for reviewing this. 
+* In advance, thank you for reviewing this. 
 I APPRECIATE ANY AND ALL COMMENTS!!! 
 Anything you type up I will treasure and learn from. 
 */
@@ -9,15 +9,7 @@ const navBar = document.querySelector('#navbar__list');
 const navBarMenu = document.querySelector('#navbar__menu');
 const sections = document.querySelectorAll('section');
 const buttonToTop = document.querySelectorAll('.button_toTop');
-const header = document.querySelector('.page__header');
-
-
-// check the location of a section in the viewport
-const isInViewport = (section) => {
-  // destructing some properties
-  const { top, bottom } = section.getBoundingClientRect();
-  return top <= 150 && bottom >= 150;
-}
+const pageHeader = document.querySelector('.page__header');
 
 
 // build navigation 
@@ -99,13 +91,16 @@ faders.forEach(fader => {
 // Create function to activate sections and header links
 function activate() {
   let navLinks = document.querySelectorAll('.menu__link');
+  let headers = document.querySelectorAll('h2');
   sections.forEach((section, index) => {    const sectionBond = section.getBoundingClientRect();
     if (sectionBond.top <= 150 && sectionBond.bottom >= 150) {
       section.classList.add("your-active-class");
       navLinks[index].classList.add("active_appear");
+      headers[index].classList.add("foo");
     } else {
       section.classList.remove("your-active-class");
       navLinks[index].classList.remove("active_appear");
+      headers[index].classList.remove("foo");
     };
   });
 };
@@ -113,6 +108,21 @@ function activate() {
 window.addEventListener('scroll', (event) => {
   activate();
 })
+
+
+
+// Create function to hide navigation after scrolling
+let timer = null;
+
+window.addEventListener('scroll', function () {
+  if (timer !== null) {
+    clearTimeout(timer);
+    pageHeader.classList.remove('header-gone');
+  }
+  timer = setTimeout(function () {
+    pageHeader.classList.add('header-gone');
+  }, 2500);
+}, false);
 
 
 // THANKS AGAIN!!! 
